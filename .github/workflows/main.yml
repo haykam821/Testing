@@ -1,17 +1,17 @@
-{
-	"on": ["push"],
-	"jobs": {
-		"main2": {
-			"runs-on": "ubuntu-latest",
-			"steps": [{
-				"uses": "actions/checkout@v1"
-			}, {
-				"uses": "actions/setup-node@v1",
-			}, {
-				"run": "npm install"
-			}, {
-				"run": "npm test"
-			}]
-		}
-	}
-}
+name: "hi"on: [push]
+jobs:
+  main2:
+    runs-on: ubuntu-latest
+	  steps:
+    - name: "hi"
+      "uses": "actions/checkout@v2"
+    - "uses": "actions/setup-node@v1.2"
+    - run: "npm install"
+    - run: "npm test"
+    - name: Build and Deploy
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BASE_BRANCH: master # The branch the action should deploy from.
+        BRANCH: gh-pages # The branch the action should deploy to.
+        FOLDER: dist #
