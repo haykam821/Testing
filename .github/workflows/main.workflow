@@ -8,7 +8,7 @@
 			}, {
 				"uses": "actions/setup-node@v1",
 				"with": {
-					"node-version": "latest"
+					"node-version": "node"
 				}
 			}, {
 				"run": "npm install"
