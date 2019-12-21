@@ -1,7 +1,7 @@
 {
 	"on": ["push"],
 	"jobs": {
-		"main": {
+		"main2": {
 			"runs-on": "ubuntu-latest",
 			"steps": [{
 				"uses": "actions/checkout@v1"
