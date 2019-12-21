@@ -1,0 +1,20 @@
+{
+	"on": ["push"],
+	"jobs": {
+		"main": {
+			"runs-on": "ubuntu-latest",
+			"steps": [{
+				"uses": "actions/checkout@v1"
+			}, {
+				"uses": "actions/setup-node@v1",
+				"with": {
+					"node-version": "latest"
+				}
+			}, {
+				"run": "npm install"
+			}, {
+				"run": "npm test"
+			}]
+		}
+	}
+}
