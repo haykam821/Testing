@@ -1,13 +1,17 @@
-name: "hi"on: [push]
+name: "Testing"
+on: [push]
 jobs:
   main2:
     runs-on: ubuntu-latest
-	  steps:
-    - name: "hi"
+    steps:
+    - name: Checkout
       "uses": "actions/checkout@v2"
-    - "uses": "actions/setup-node@v1.2"
-    - run: "npm install"
-    - run: "npm test"
+    - name: Setup Node
+      "uses": "actions/setup-node@v1.2"
+    - name: Install
+      run: "npm install"
+    - name: Test
+      run: "npm test"
     - name: Build and Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
