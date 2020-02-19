@@ -1,21 +1,26 @@
-name: "Testing"
-on: [push]
 jobs:
-  main2:
+  main:
+    name: Main
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      "uses": "actions/checkout@v2"
-    - name: Setup Node
-      "uses": "actions/setup-node@v1.1.0"
-    - name: Install
-      run: "npm install"
-    - name: Test
-      run: "npm test"
-    - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@releases/v3
-      with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BASE_BRANCH: master # The branch the action should deploy from.
-        BRANCH: gh-pages # The branch the action should deploy to.
-        FOLDER: dist #
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v1.1.0
+      - name: Install
+        run: npm install
+      - name: Lint
+        run: npm run lint
+      - name: Test
+        run: npm test
+      - name: Build
+        run: npm run build
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          BASE_BRANCH: master
+          BRANCH: gh-pages
+          FOLDER: dist
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+name: Main
+on: push
