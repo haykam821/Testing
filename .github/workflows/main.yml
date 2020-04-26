@@ -29,7 +29,7 @@
         {
           "uses": "eskatos/gradle-command-action@v1",
           "with": {
-            "gradle-version": "current"
+            "gradle-version": "current",
             "arguments": "build"
           }
         }
