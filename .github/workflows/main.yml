@@ -29,10 +29,16 @@
                     }
                 },
                 {
+                    "name": "Set up Gradle",
+                    "uses": "eskatos/gradle-command-action@v1",
+                    "with": {
+                        "gradle-version": "current"
+                    }
+                },
+                {
                     "name": "Build mod",
                     "uses": "eskatos/gradle-command-action@v1",
                     "with": {
-                        "gradle-version": "current",
                         "arguments": "build"
                     }
                 },
