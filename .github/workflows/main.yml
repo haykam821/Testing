@@ -1,17 +1,9 @@
 {
     "name": "Fabric",
-    "on": {
-        "push": {
-            "branches": [
-                "master"
-            ]
-        },
-        "pull_request": {
-            "branches": [
-                "master"
-            ]
-        }
-    },
+    "on": [
+        "push",
+        "pull_request"
+    ],
     "jobs": {
         "buildMod": {
             "name": "Build mod",
