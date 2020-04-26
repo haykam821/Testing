@@ -1,0 +1,24 @@
+{
+	"schemaVersion": 1,
+	"id": "testing",
+	"version": "1.0.0",
+	"name": "Testing",
+	"description": "testing",
+	"authors": [
+		"haykam821"
+	],
+	"contact": {
+		"homepage": "https://github.com/haykam821/Testing#readme",
+		"issues": "https://github.com/haykam821/Testing/issues"
+	},
+	"entrypoints": {
+		"main": [
+			"io.github.haykam821.testing.Main"
+		]
+	},
+	"license": "MIT",
+	"icon": "assets/testing/icon.png",
+	"depends": {
+		"fabricloader": ">=0.4.0"
+	}
+}
