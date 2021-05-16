@@ -7,10 +7,10 @@ on:
   pull_request:
 
 jobs:
-  build:
+  validate:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
 
-      - run: "ls"
+      - run: jq . ./data/**/*.json > /dev/null
